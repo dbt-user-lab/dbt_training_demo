@@ -43,7 +43,7 @@ models:
     raws:
       schema: RAW
     transforms:
-      schema: TRAMSFORM
+      schema: TRANSFORM
     consumptions:
       schema: CONSUMPTION
 
