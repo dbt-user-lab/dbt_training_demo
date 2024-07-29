@@ -17,7 +17,7 @@ where dbt_valid_to is null
 
 {% if is_incremental() %}
 
-    where lastmodified_date > (select max(lastmodified_date) from {{ this }})
+    and lastmodified_date > (select max(lastmodified_date) from {{ this }})
 
 {% endif %}
 
