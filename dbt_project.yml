@@ -32,7 +32,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   raws:
-    schema: RAW
+    schema: TRANSFORM
   transforms:
     schema: TRANSFORM
   consumptions:
