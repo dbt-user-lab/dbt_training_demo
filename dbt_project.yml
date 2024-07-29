@@ -42,7 +42,7 @@ seeds:
   +schema: RAW
     
 snapshots:
-  +target_schema: RAW
+  +target_schema: SNAPSHOT_SCHEMA
 
 vars:
   na: 'NA'
