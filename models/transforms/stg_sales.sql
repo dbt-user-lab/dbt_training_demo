@@ -1,5 +1,6 @@
 {{
   config(
+    schema = 'transform',
     materialized='incremental',
     incremental_strategy='merge',
 	unique_key = 'order_id'
@@ -24,7 +25,6 @@ left join {{ ref('stg_products')}} dim_products
  on sales.product_id=dim_products.product_id
 left join {{ ref('stg_customers')}} dim_customers
   on sales.customer_id = dim_customers.customer_id
-
 
 {% if is_incremental() %}
 
