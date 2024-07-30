@@ -31,12 +31,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
 models:
-  raws:
-    schema: TRANSFORM
-  transforms:
-    schema: TRANSFORM
-  consumptions:
-    schema: CONSUMPTION
+  DBT_TRAINING_DEMO:
+    raws:
+      +schema: TRANSFORM
+    transforms:
+      +schema: TRANSFORM
+    consumptions:
+      +schema: CONSUMPTION
 
 seeds:
   +schema: RAW
