@@ -9,6 +9,5 @@ select
    product_name ,
    product_unit_price,
    customer_name,
-   country,
-   lastmodified_date 
+   country 
 from {{ ref('stg_sales') }}
