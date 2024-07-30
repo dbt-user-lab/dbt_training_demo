@@ -1,22 +1,38 @@
 sources:
   - name: raw
     description: The primary source system.
-    database: MYDB
-    schema: RAW
+    database: dbt_demo
+    schema: raw
     freshness:
       warn_after: {count: 1 , period: day}
       error_after: {count: 1, period: day}
-    loaded_at_field: Updated_at
+    loaded_at_field: lastmodified_date
 
     tables:
       - name: customers
         description: The customer table from OMS.
         identifier: customers
+        columns:
+          - name: customer_id
+            tests:
+              - unique
+              - not_null
       - name: products
         description: The order table from OMS.
         identifier: products
+        columns:
+          - name: product_id
+            tests:
+              - unique
+              - not_null
       - name: sales
         description: The order item table from OMS.
         identifier: sales
+        columns:
+          - name: order_id
+          - name: product_id
+            tests:
+              - unique
+              - not_null
   
   

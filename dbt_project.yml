@@ -2,12 +2,12 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'DBT_TRAINING_PROJECT'
+name: 'DBT_TRAINING_DEMO'
 version: '1.0.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'DBT_TRAINING_PROJECT'
+profile: 'DBT_TRAINING_DEMO'
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -31,21 +31,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
 models:
-  DBT_TRAINING_PROJECT:
-    
-    # Config indicated by + and applies to all files under models/example/
-    customers_stg:
-      schema: L2_PROCESSED_SCH
-    products_stg:
-      +materialized: table
-    orders_stg:
-      schema: L2_PROCESSED_SCH
+  DBT_TRAINING_DEMO:
     raws:
-      schema: RAW
+      +schema: RAW
     transforms:
-      schema: TRANSFORM
+      +schema: TRANSFORM
     consumptions:
-      schema: CONSUMPTION
+      +schema: CONSUMPTION
     +pre-hook:
       - "INSERT INTO DBT_DEMO.RAW.AUDIT_LOG (INVOCATION_ID,MODEL_NAME,STATUS,START_TIME,END_TIME) VALUES ('{{ invocation_id }}','{{ this.name }}','STARTED',CURRENT_TIMESTAMP,NULL)"
     +post-hook:
@@ -56,12 +48,14 @@ on-run-end:
   - "INSERT INTO DBT_DEMO.RAW.AUDIT_LOG (INVOCATION_ID,MODEL_NAME,STATUS,START_TIME,END_TIME) VALUES ('{{ invocation_id }}','ON-RUN-END','COMPLETED',NULL,CURRENT_TIMESTAMP)"
 
 seeds:
-  DBT_TRAINING_PROJECT:
-    # Config indicated by + and applies to all files under models/example/
-    schema: RAW
+  +schema: RAW
     
 snapshots:
-  DBT_TRAINING_PROJECT:
-    # Config indicated by + and applies to all files under models/example/
-    schema: RAW
+  +target_schema: SNAPSHOT_SCHEMA
+
+vars:
+  na: 'NA'
+  apac: 'APAC'
+  emea: 'EMEA'
+  latam: 'LATAM'
 

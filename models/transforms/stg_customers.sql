@@ -1,5 +1,6 @@
 {{
   config(
+    schema = 'transform',
     materialized='incremental',
     incremental_strategy='merge',
 	unique_key = 'customer_id'
@@ -12,7 +13,7 @@ select
     trim(country) as country, 
     created_date as created_date,
     lastmodified_date as lastmodified_date,
-    'NA' as region
+    {{ get_region('country') }} as region
 from {{ ref('raw_customers') }}
 
 {% if is_incremental() %}
