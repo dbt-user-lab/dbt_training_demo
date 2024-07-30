@@ -28,7 +28,7 @@ left join {{ ref('stg_customers')}} dim_customers
 
 {% if is_incremental() %}
 
-    where last_modified_date > (select max(last_modified_date) from {{ this }})
+    where sales.lastmodified_date > (select max(lastmodified_date) from {{ this }})
 
 {% endif %}
 
