@@ -1,3 +1,10 @@
+{{
+  config(
+    schema = 'raw',
+    materialized='view'
+  )
+}}
+
 select  customer_id, 
         name, 
         country, 

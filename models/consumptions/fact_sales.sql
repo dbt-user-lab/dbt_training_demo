@@ -1,3 +1,10 @@
+{{
+  config(
+    schema = 'consumption',
+    materialized='view'
+  )
+}}
+
 select
    order_id,
    product_id,
