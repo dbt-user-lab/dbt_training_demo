@@ -33,7 +33,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   DBT_TRAINING_DEMO:
     raws:
-      +schema: TRANSFORM
+      +schema: RAW
     transforms:
       +schema: TRANSFORM
     consumptions:
