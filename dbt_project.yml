@@ -42,8 +42,6 @@ models:
       schema: L2_PROCESSED_SCH
     raws:
       schema: RAW
-      vars:
-        var_custs_id: 3
     transforms:
       schema: TRANSFORM
     consumptions:
@@ -67,5 +65,3 @@ snapshots:
     # Config indicated by + and applies to all files under models/example/
     schema: RAW
 
-vars:
-  var_cust_id: '1'
