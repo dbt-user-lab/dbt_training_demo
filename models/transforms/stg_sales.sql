@@ -21,9 +21,9 @@ select
    dim_customers.country  as country,
    sales.lastmodified_date 
 from {{ ref('raw_sales') }} sales
-left join {{ ref('stg_products')}} dim_products
+left join {{ ref('dim_products')}} dim_products
  on sales.product_id=dim_products.product_id
-left join {{ ref('stg_customers')}} dim_customers
+left join {{ ref('dim_customers')}} dim_customers
   on sales.customer_id = dim_customers.customer_id
 
 {% if is_incremental() %}
