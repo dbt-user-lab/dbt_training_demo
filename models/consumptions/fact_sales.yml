@@ -14,6 +14,8 @@ models:
         description: Order Date
       - name: order_amount
         description: Order Amount
+      - name: order_amount_in_inr
+        description: Order Amount in INR
       - name: quantity
         description: Quantity
       - name: product_name
