@@ -11,7 +11,7 @@ select
     year, 
     day,
     updated_at
-from {{ ref('dates') }}
+from {{ source('raw','dates')}}
 
 {% if is_incremental() %}
 
