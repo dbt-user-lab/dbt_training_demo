@@ -11,6 +11,7 @@ select
    customer_id,
    order_date,
    order_amount,
+   order_amount_in_inr,
    created_date,
    quantity,
    product_name ,
