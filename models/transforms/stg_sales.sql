@@ -13,6 +13,7 @@ select
    sales.customer_id as customer_id,
    sales.order_date as order_date,
    sales.order_amount as order_amount,
+   {{ dollars_to_inr('sales.order_amount') }} as order_amount_in_inr,
    sales.created_date as created_date,
    sales.quantity as quantity,
    dim_products.product_name  as product_name ,
