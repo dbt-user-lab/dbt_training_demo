@@ -18,7 +18,7 @@ select
    dim_products.unit_price as product_unit_price,
    dim_customers.customer_name as customer_name,
    dim_customers.country  as country,
-   sales.lastmodified_date 
+   sales.lastmodified_date  
 from {{ ref('stg_sales') }} sales
 left join {{ ref('dim_products')}} dim_products
  on sales.product_id=dim_products.product_id
