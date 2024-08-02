@@ -15,4 +15,4 @@ select
     created_date, 
     quantity, 
     to_date(lastmodified_date) as lastmodified_date
-from {{ source('raw','sales') }}
+from {{ source('landing','sales') }}

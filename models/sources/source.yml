@@ -1,5 +1,5 @@
 sources:
-  - name: raw
+  - name: landing
     description: The primary source system.
     database: dbt_demo
     schema: landing

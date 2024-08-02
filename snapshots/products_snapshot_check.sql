@@ -15,6 +15,6 @@ select
     unitprice as unit_price,
     created_date as created_date,
     lastmodified_date as lastmodified_date
-from {{ source('raw','products') }}
+from {{ source('landing','products') }}
 
 {% endsnapshot %}
