@@ -2,7 +2,7 @@ sources:
   - name: raw
     description: The primary source system.
     database: dbt_demo
-    schema: raw
+    schema: landing
     freshness:
       warn_after: {count: 1 , period: day}
       error_after: {count: 1, period: day}
