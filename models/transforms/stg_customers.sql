@@ -3,7 +3,7 @@
     schema = 'transform',
     materialized='incremental',
     incremental_strategy='merge',
-	unique_key = 'customer_id'
+	  unique_key = 'customer_id'
   )
 }}
 
