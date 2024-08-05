@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_sales
+  - name: int_sales
     description: A table having Sales data
     columns:
       - name: order_id

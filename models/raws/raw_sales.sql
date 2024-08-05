@@ -14,5 +14,5 @@ select
     order_amount, 
     created_date, 
     quantity, 
-    to_date(lastmodified_date) as lastmodified_date
+    to_date(LAST_MODIFIED_DATE) as lastmodified_date
 from {{ source('landing','sales') }}

@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_products
+  - name: int_products
     description: A table having Products data
     columns:
       - name: product_id

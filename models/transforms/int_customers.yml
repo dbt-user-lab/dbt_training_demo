@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_customers
+  - name: int_customers
     description: A table having Customers data
     columns:
       - name: customer_id
