@@ -19,7 +19,7 @@ select
    dim_customers.customer_name as customer_name,
    dim_customers.country  as country,
    sales.lastmodified_date  
-from {{ ref('stg_sales') }} sales
+from {{ ref('int_sales') }} sales
 left join {{ ref('dim_products')}} dim_products
  on sales.product_id=dim_products.product_id
 left join {{ ref('dim_customers')}} dim_customers

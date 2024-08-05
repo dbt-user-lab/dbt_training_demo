@@ -11,4 +11,4 @@ select
     country, 
     created_date,
     region
-from {{ ref('stg_customers') }}
+from {{ ref('int_customers') }}
