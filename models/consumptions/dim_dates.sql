@@ -11,7 +11,7 @@ select
     year, 
     day,
     updated_at
-from {{ source('raw','dates')}}
+from {{ source('landing','dates')}}
 
 {% if is_incremental() %}
 
