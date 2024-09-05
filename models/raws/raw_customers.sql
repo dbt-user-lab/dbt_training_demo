@@ -11,7 +11,7 @@
 
 select  customer_id, 
         name, 
-        substring(country,1,10) as country, 
+        country, 
         region_id, 
         to_date(created_date) as created_date , 
         to_date(lastmodified_date) as lastmodified_date ,
