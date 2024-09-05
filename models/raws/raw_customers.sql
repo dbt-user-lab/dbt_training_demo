@@ -14,7 +14,8 @@ select  customer_id,
         substring(country,1,10) as country, 
         region_id, 
         to_date(created_date) as created_date , 
-        to_date(lastmodified_date) as lastmodified_date 
+        to_date(lastmodified_date) as lastmodified_date ,
+        current_user as created by
 from {{ source('landing','customers')}}
 
 -- Added comment
